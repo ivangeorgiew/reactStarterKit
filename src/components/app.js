@@ -1,11 +1,21 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default class App extends React.Component {
-  render () {
-    return (
-      <div>
-        <h1>Change me</h1>
-      </div>
-    )
-  }
+
+
+
+/* APP COMP */
+function App(props) {
+  return (
+    <div>
+      <h1>Change me</h1>
+    </div>
+  );
 }
+
+App.propTypes = {};
+
+
+
+
+export default App;

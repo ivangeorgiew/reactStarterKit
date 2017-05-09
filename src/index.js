@@ -1,19 +1,28 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './components/app'
-import './styles/app.scss'
-import { AppContainer } from 'react-hot-loader'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './styles/app.scss';
 
-const render = Component => {
-  ReactDOM.render(
+import App from './components/App';
+import { AppContainer } from 'react-hot-loader';
+
+
+
+
+/* RENDER */
+function render(Component, props={}) {
+  return ReactDOM.render(
     <AppContainer>
-      <Component />
+      <Component {...props}/>
     </AppContainer>,
-    document.getElementById('main')
-  )
+    document.getElementById('root')
+  );
 }
 
-render(App)
-if (module.hot) {
-  module.hot.accept('./components/app', () => { render(App) })
-}
+render(App);
+
+
+
+
+/* HOT REPLACEMENT */
+if(module.hot)
+  module.hot.accept('./components/App', () => { render(App) });
