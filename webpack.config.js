@@ -1,12 +1,15 @@
 const path = require('path')
 const webpack = require('webpack')
 
+
+
+
 module.exports = {
   devtool: 'inline-source-map',
 
   entry: [
-    'babel-polyfill',
-    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
     './src/index'
   ],
 
@@ -23,7 +26,8 @@ module.exports = {
 
   devServer: {
     hot: true,
-    contentBase: path.join(__dirname, 'public')
+    contentBase: path.join(__dirname, 'public'),
+    publicPath: '/'
   },
 
   module: {
