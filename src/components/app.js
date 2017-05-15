@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+export default App;
+
 
 
 
 /* APP COMP */
+App.propTypes = {};
+
 function App(props) {
   return (
     <div>
@@ -12,10 +16,3 @@ function App(props) {
     </div>
   );
 }
-
-App.propTypes = {};
-
-
-
-
-export default App;
